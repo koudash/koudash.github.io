@@ -1,20 +1,127 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head>
-  <meta charset="UTF-8">
-  <title>Lei Kang</title>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Lei Kang | Data Engineer and Web Developer</title>
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" 
+			integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">        
+        <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- "Sketchy" theme from Bootswatch -->
+		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/sketchy/bootstrap.min.css">
+        <!-- Bootstrap jQuery and Popper.js -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+			crossorigin="anonymous">
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+			crossorigin="anonymous">
+		</script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+			crossorigin="anonymous">
+		</script>
+		<!-- Plotly CDN -->
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <!-- Local style CSS -->
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="./assets/images/favicon.png">
+    </head>
+    <body>
 
-<body>
-  <img src="./Under-Cunstruction.jpg" width=100% alt="under-construction"/>
-  <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis eget dolor in condimentum. Etiam consectetur ligula aliquam arcu auctor, sed posuere quam rhoncus. Vivamus eget tellus porttitor arcu sagittis bibendum. Nam rhoncus, orci in convallis mattis, purus diam lobortis tellus, in aliquam dolor ligula in ante. Aenean quis sem molestie sem commodo sodales. Phasellus interdum fringilla mauris, at congue nisl ullamcorper non. Donec fermentum feugiat luctus. Phasellus fringilla, magna semper dignissim vestibulum, lacus ligula euismod neque, id posuere magna massa ac augue. Aenean eget sapien purus. Donec nunc elit, convallis eu augue ut, blandit pretium metus. Fusce et purus ac justo scelerisque tincidunt et vel odio. In eget tellus risus."</p> 
-  <p> "Suspendisse augue nunc, ornare ut laoreet at, placerat consectetur risus. Donec nec tortor viverra, posuere leo vel, tincidunt purus. Integer molestie ante non mauris varius, vitae posuere nisi sagittis. In sollicitudin ipsum sed purus elementum tempor. Aliquam ullamcorper nisl lorem, sed rhoncus elit elementum quis. Aliquam id ante congue, venenatis mi sit amet, malesuada nulla. Nullam pharetra gravida purus non dignissim. Donec sit amet nisi sapien."</p>
-  <h3>How to connect me</h3>
-  <ul type=square>
-    <li>facebook:abcde</li>
-    <li>linkedin:bcedf</li>
-    <li>twitter:cdefg</li>
-  </ul>
-</body>
+		<nav class="navbar navbar-expand-sm navbar-light bg-light py-0">
+			<a class="navbar-brand ml-4 px-3 bg-dark" href="#">
+				<i class="fas fa-user-secret fa-icon-lg"></i>
+				<span id="myname">&ensp;LEI KANG</span>
+			</a>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Set ul to right -->
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Python
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="https://koudash.github.io/Homework-14_Aliens-R-Real/" target="_blank">
+								<i class="fas fa-space-shuttle fa-icon-sm"></i>
+								Aliens
+							</a>
+							<a class="dropdown-item" href="./humidity.html">Humidity</a>
+							<a class="dropdown-item" href="./cloudiness.html">Cloudiness</a>
+							<a class="dropdown-item" href="./wind_speed.html">Wind Speed</a>
+						</div>
+					</li>
 
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  JavaScript
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="https://koudash.github.io/Homework-14_Aliens-R-Real/" target="_blank">
+								<i class="fas fa-space-shuttle fa-icon-sm"></i>
+								Aliens
+							</a>
+							<a class="dropdown-item" href="./humidity.html">Humidity</a>
+							<a class="dropdown-item" href="./cloudiness.html">Cloudiness</a>
+							<a class="dropdown-item" href="./wind_speed.html">Wind Speed</a>
+						</div>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  Database
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="https://koudash.github.io/Homework-14_Aliens-R-Real/" target="_blank">
+								<i class="fas fa-space-shuttle fa-icon-sm"></i>
+								MySQL & Data Viz
+							</a>
+							<a class="dropdown-item" href="./humidity.html">
+								<i class="fas fa-space-shuttle fa-icon-sm"></i>
+								MongoDB & ETL								
+							</a>
+							<a class="dropdown-item" href="./cloudiness.html">
+								<i class="fas fa-space-shuttle fa-icon-sm"></i>
+								Big Data								
+							</a>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
+
+
+		<div class="container-fluid">
+	
+			<h1>WELCOME!</h1>
+			
+			<div class="bird-container bird-container--one">
+				<div class="bird bird--one"></div>
+			</div>
+			
+			<div class="bird-container bird-container--two">
+				<div class="bird bird--two"></div>
+			</div>
+			
+			<div class="bird-container bird-container--three">
+				<div class="bird bird--three"></div>
+			</div>
+			
+			<div class="bird-container bird-container--four">
+				<div class="bird bird--four"></div>
+			</div>
+
+		</div>
+		
+
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    </body>
 </html>
