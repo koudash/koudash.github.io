@@ -174,15 +174,9 @@ h1 {
     color: navy;
 }
 
-.contact {
+#contact {
     position: absolute;
     bottom: 5%;
     left: 5%;
     display: inline;
 }
-
-/* #contact {
-    position: absolute;
-    bottom: 5%;
-    left: 5%;
-} */
