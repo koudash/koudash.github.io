@@ -126,7 +126,6 @@ h1 {
     }
 }
 /* *********************************************************************************** */
-
 #myname {
     color: white;
 }
@@ -150,25 +149,24 @@ h1 {
 }
 
 .py-lists {
-    color: lawngreen;    
-}
-
-.js-lists {
-    color: dodgerblue;    
-}
-
-.tableau-lists {
-    color: gold;    
-}
-
-.db-lists {
-    color: darkviolet;    
-}
-
-.ml-lists {
     color: tomato;    
 }
 
+.js-lists {
+    color: orange;    
+}
+
+.tableau-lists {
+    color: lawngreen;    
+}
+
+.db-lists {
+    color: dodgerblue;    
+}
+
+.ml-lists {
+    color: darkviolet;    
+}
 
 .fa-server {
     color: navy;
@@ -176,7 +174,7 @@ h1 {
 
 #contact {
     position: absolute;
-    bottom: 5%;
-    left: 5%;
+    bottom: 1.6rem;
+    right: 2rem;
     display: inline;
 }
