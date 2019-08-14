@@ -58,8 +58,9 @@ d3.select("#fishing-end").on("click", function() {
     let myKey = Math.floor(Math.random() * 5);
 
     svg.append('text')
+        .attr("class", "hidden-message")
         .attr("x", 50)
-        .attr("y", $("h1").offset().top - 195)
+        .attr("y", $("h1").offset().top * 0.3)
         .attr("font-size", "20px")
         .attr("fill", "navy")
         .text(hiddenMessage[myKey]);
