@@ -250,3 +250,7 @@ body {
     right: 2rem;
     display: inline;
 }
+
+.dropdown-menu {
+    width: 180px;
+}
