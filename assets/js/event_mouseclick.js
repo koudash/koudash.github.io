@@ -1,10 +1,10 @@
 // Object for messages to be passed to html
 const hiddenMessage = {
-    0: "I've graduated in Data Analytics Boot Camp from Rice University this August.",
-    1: "I've got extensive experiences in Python programming with libraries built on top of it such as Pandas, Matplotlib, etc.",
-    2: "I am very familiar with ETL processes, specifically using Selenium/Splinter, Flask, and MySQL/mongoDB databases.",
-    3: "Javascript means lots of fun to me. I am confident in using HTML/CSS, D3.js, Plotly.js, and Leaflet tools.",
-    4: "I learned how to build sklearn and Keras machine learning models. I've completed a solo project on soccer betting using these knowledges."
+    0: "Graduated from Data Analytics Boot Camp in Rice Univ this August",
+    1: "Versed in Python programing with libraries built on top of it such as Pandas, Matplotlib, etc.",
+    2: "Proficient in ETL processes, specifically using Selenium/Splinter, Flask, and MySQL/mongoDB databases",
+    3: "Conversant with data viz using Tableau, HTML/CSS, JavaScript, as well as D3.js, Plotly.js, and Leaflet tools",
+    4: "Familiar with the buildup of machine learning models to address real world problems"
 };
 
 // Set the viz of boat after animation starts
@@ -59,7 +59,7 @@ d3.select("#fishing-end").on("click", function() {
 
     svg.append('text')
         .attr("class", "hidden-message")
-        .attr("x", 50)
+        .attr("x", 30)
         .attr("y", $("h1").offset().top * 0.3)
         .attr("font-size", "20px")
         .attr("fill", "navy")
