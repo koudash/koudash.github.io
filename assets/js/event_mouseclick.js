@@ -1,7 +1,7 @@
 // Object for messages to be passed to html
 const hiddenMessage = {
     0: "Graduated from Data Analytics Boot Camp in Rice Univ this August",
-    1: "Versed in Python programing with libraries built on top of it such as Pandas, Matplotlib, etc.",
+    1: "Versed in Python programming with libraries built on top of it such as Pandas, Matplotlib, etc.",
     2: "Proficient in ETL processes, specifically using Selenium/Splinter, Flask, and MySQL/mongoDB databases",
     3: "Conversant with data viz using Tableau, HTML/CSS, JavaScript, as well as D3.js, Plotly.js, and Leaflet tools",
     4: "Familiar with the buildup of machine learning models to address real world problems"
