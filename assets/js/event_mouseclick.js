@@ -35,7 +35,7 @@ d3.select("#fishing-end")
             .attr("y", $("#fishing-end").offset().top)
             .attr("font-size", "20px")
             .attr("fill", "hotpink")
-            .text("Click Me for Hidden Message!");            
+            .text("Click on Me for Hidden Message!");            
 
         // remove 'svg' element with the class of "temp-svg"
         d3.select(".temp-svg")
@@ -96,5 +96,5 @@ $(".nav-link").hover(function() {
     $(this).css("color", "gray");
     }, function() {
     $(this).css("color", "black");
-    
+
 });
