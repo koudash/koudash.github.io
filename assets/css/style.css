@@ -271,3 +271,23 @@ h1 {
 .dropdown-menu {
     width: 180px;
 }
+
+.about-me {
+    position:absolute;
+    z-index:15;
+    cursor: pointer; 
+    background-color:transparent;
+    border:2px solid black;
+    border-radius: 35px 10px;   
+    margin-top: 8px;
+    padding: 25px 25px 20px;    
+    width:60vw;
+    height: auto;
+    text-align:left;
+    font-size: 20px;
+    word-break: break-word;
+    white-space: normal;    
+    color: dodgerblue;
+    font-family: Neucha;
+    font-weight: 700;
+}

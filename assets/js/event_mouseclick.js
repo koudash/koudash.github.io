@@ -7,6 +7,13 @@ const hiddenMessage = {
     4: "Familiar with the buildup of machine learning models to address real world problems"
 };
 
+// About Me
+const aboutMe = `Data Analyst with Certificate in Data Analytics Boot Camp from Rice University. 
+Proven ability in performing data analysis and visualization using Python, JavaScript, machine learning, 
+and more to generate reports that offers valuable business insights. Rapid adaptation towards different 
+company cultures validated by the experiences as a former scientific researcher with strong communication 
+and team-work skills showcased by more than 10 co-authored SCI publications.`;
+
 // Set the viz of boat after animation starts
 d3.select("#fishing-end")
 
@@ -71,4 +78,23 @@ d3.select("#fishing-end").on("click", function() {
         .duration(2000)
         .remove();
 
+});
+
+// Use jQuery to append "About Me" when hovering on my name 
+$("#myname").hover(function() {
+
+    $(this).css("color", "dodgerblue").append(`<div class='about-me'><span>${aboutMe}</span></div>`);
+    }, function() {
+    $(this).css("color", "white");
+    $(".about-me").remove();
+
+});
+
+// Change the color of techs from black to gray when hovered on
+$(".nav-link").hover(function() {
+
+    $(this).css("color", "gray");
+    }, function() {
+    $(this).css("color", "black");
+    
 });
