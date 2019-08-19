@@ -55,7 +55,7 @@ d3.select("#fishing-end")
     });
 
 // Show hidden messages upon mouse clicking on the boat
-d3.select("#fishing-end").on("click", function() {
+d3.select("#fishing-end").on("click", () => {
 
     let svg = d3.select("body")
         .append("svg")
@@ -78,21 +78,40 @@ d3.select("#fishing-end").on("click", function() {
         .duration(2000)
         .remove();
 
-    // Shortly change the color of my name to dodgerblue once ("blink") right after the hidden message disappears 
-    setTimeout(function() {
+    // Make myname "blink" thrice shortly after the hidden message disappears
+    setTimeout(() => {
 
-        // Change the color of my name to dodgerblue
-        d3.select("#myname")
-            .attr("style", "color:dodgerblue");
+        d3.select("#myname").attr("style", "color:dodgerblue");
 
-        // After 0.5s, change the color of my name back to white
-        setTimeout(function() {
+        setTimeout(() => {
 
-            d3.select("#myname")
-                .attr("style", "color:white");
+            d3.select("#myname").attr("style", "color:white");
+
+            setTimeout(() => {
+
+                d3.select("#myname").attr("style", "color:dodgerblue");
+
+                setTimeout(() => {
+
+                    d3.select("#myname").attr("style", "color:white");
+
+                    setTimeout(() => {
+
+                        d3.select("#myname").attr("style", "color:dodgerblue");
+
+                        setTimeout(() => {
+
+                            d3.select("#myname").attr("style", "color:white");
+
+                        }, 200);
+
+                    }, 200);
+
+                }, 200);
+
+            }, 200);
             
-        }, 500);
-
+        }, 200);
 
     }, 2200);
 
@@ -116,3 +135,48 @@ $(".nav-link").hover(function() {
     $(this).css("color", "black");
 
 });
+
+
+
+
+
+// Use jQuery to append "About Me" when hovering on my name 
+$(".prj-lists").hover(function() {
+
+    $(body).append(`<svg class='prj-img'><img src=${prcDescrObj[this.id]} alt=${this.id}></svg>`);
+
+
+
+    }, function() {
+
+    $(".prj-img").remove();
+
+});
+
+
+// // Show hidden messages upon mouse clicking on the boat
+// d3.select(".prj-lists").on("mouseover", function() {
+
+//     let svg = d3.select("body")
+//         .append("svg")
+//         .attr("class", "temp-svg");  
+
+//     // Randomly generate a number between 0 and 4 (inclusive), functioning as the key to call for message in "hiddenMessage" 
+//     let myKey = Math.floor(Math.random() * 5);
+
+//     svg.append('text')
+//         .attr("class", "hidden-message")
+//         .attr("x", 30)
+//         .attr("y", $("h1").offset().top * 0.3)
+//         .attr("font-size", "20px")
+//         .attr("fill", "navy")
+//         .text(hiddenMessage[myKey]);
+
+//     // remove 'svg' element with the class of "temp-svg"
+//     d3.select(".temp-svg")
+//         .transition()
+//         .duration(2000)
+//         .remove();
+
+// });
+
