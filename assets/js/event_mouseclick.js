@@ -72,11 +72,29 @@ d3.select("#fishing-end").on("click", function() {
         .attr("fill", "navy")
         .text(hiddenMessage[myKey]);
 
-    // remove 'svg' element with the class of "temp-svg"
+    // Remove 'svg' element with the class of "temp-svg"
     d3.select(".temp-svg")
         .transition()
         .duration(2000)
         .remove();
+
+    // Shortly change the color of my name to dodgerblue once ("blink") right after the hidden message disappears 
+    setTimeout(function() {
+
+        // Change the color of my name to dodgerblue
+        d3.select("#myname")
+            .attr("style", "color:dodgerblue");
+
+        // After 0.5s, change the color of my name back to white
+        setTimeout(function() {
+
+            d3.select("#myname")
+                .attr("style", "color:white");
+            
+        }, 500);
+
+
+    }, 2200);
 
 });
 
