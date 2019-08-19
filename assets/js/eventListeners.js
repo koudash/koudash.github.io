@@ -14,6 +14,16 @@ and more to generate reports that offers valuable business insights. Rapid adapt
 company cultures validated by the experiences as a former scientific researcher with strong communication 
 and team-work skills showcased by more than 10 co-authored SCI publications.`;
 
+// Project Image and Description
+const prcDescrObj = {
+    "pymaceuticals": {
+        "img": "./assets/images/prj-img/pymaceuticals.png",
+        "text": `Analyzed animal drug test and demostrated the results with Matplotlib Python library`}
+};
+// TO BE CONTINUED
+
+
+
 // Set the viz of boat after animation starts
 d3.select("#fishing-end")
 
@@ -82,35 +92,20 @@ d3.select("#fishing-end").on("click", () => {
     setTimeout(() => {
 
         d3.select("#myname").attr("style", "color:dodgerblue");
-
         setTimeout(() => {
-
             d3.select("#myname").attr("style", "color:white");
-
             setTimeout(() => {
-
                 d3.select("#myname").attr("style", "color:dodgerblue");
-
                 setTimeout(() => {
-
                     d3.select("#myname").attr("style", "color:white");
-
                     setTimeout(() => {
-
                         d3.select("#myname").attr("style", "color:dodgerblue");
-
                         setTimeout(() => {
-
                             d3.select("#myname").attr("style", "color:white");
-
                         }, 200);
-
                     }, 200);
-
                 }, 200);
-
-            }, 200);
-            
+            }, 200);            
         }, 200);
 
     }, 2200);
@@ -136,47 +131,66 @@ $(".nav-link").hover(function() {
 
 });
 
+// Demo image and description of selected project
+d3.selectAll(".prj-lists-text")  
+    
+    // Show demo image and description of selected project once being hovered on
+    .on("mouseover", function() {
 
+        let prjOffsetLeft = "",
+            prjOffsetTop = ""
+            cursorPath = "";
+        
+        if ($(window).width() >= 750) {
 
+            prjOffsetLeft = `${$(".prj-lists-text").offset().left - 594.07 + 0.1833 * $(window).width()}px`;
+            prjOffsetTop = `${$(".prj-lists-text").offset().top}px`;
+            // Downloaded from https://pixabay.com/vectors/point-pointing-finger-hand-38123/; edited by Photoshop
+            cursorPath = "./assets/images/cursors/cursor-left.png";            
 
+        } else {
 
-// Use jQuery to append "About Me" when hovering on my name 
-$(".prj-lists").hover(function() {
+            if ($(window).width() > 559) {
+                prjOffsetLeft = `${$(".prj-lists-text").offset().left - 150}px`;
+            } else {
+                prjOffsetLeft = `${$(".prj-lists-text").offset().left}px`;
+            }            
+            
+            prjOffsetTop = `${$(".prj-lists-text").offset().top + 20}px`;
+            // Downloaded from https://www.sccpre.cat/show/bTmhxT_hand-pointing-down-finger-pointing-down-vector/; edited by Photoshop
+            cursorPath = "./assets/images/cursors/cursor-down.png";
+        }
+        
+        // Setup cursor type
+        d3.select(this)
+            .style("cursor", `url(${cursorPath}), auto`);
 
-    $(body).append(`<svg class='prj-img'><img src=${prcDescrObj[this.id]} alt=${this.id}></svg>`);
+        // Append "img" to html body
+        d3.select("body").append("img")
+            .attr("class", "prj-img")
+            .attr("src", `${prcDescrObj[this.id]["img"]}`)
+            .attr("alt", `${this.id}`)
+            .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
+            .style("left", prjOffsetLeft)
+            .style("top", prjOffsetTop);
+        // Append "div" (description text) to html body
+        // Make sure "img" with the class of "prj-img" has been completely loaded before "div" appending
+        setTimeout(() => {
+            d3.select("body").append("div")
+                .attr("class", "prj-descr")
+                .attr("alt", `${this.id}`)
+                .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
+                .style("left", prjOffsetLeft)
+                .style("top", `${$(".prj-img").offset().top + $(".prj-img").outerHeight()}px`)
+                .text(`${prcDescrObj[this.id]["text"]}`);            
+        }, 8);
 
+    })
 
+    // Remove demo image and description after mouse has been moved away from project
+    .on("mouseout", function() {
 
-    }, function() {
+        d3.select(".prj-img").remove();
+        d3.select(".prj-descr").remove();
 
-    $(".prj-img").remove();
-
-});
-
-
-// // Show hidden messages upon mouse clicking on the boat
-// d3.select(".prj-lists").on("mouseover", function() {
-
-//     let svg = d3.select("body")
-//         .append("svg")
-//         .attr("class", "temp-svg");  
-
-//     // Randomly generate a number between 0 and 4 (inclusive), functioning as the key to call for message in "hiddenMessage" 
-//     let myKey = Math.floor(Math.random() * 5);
-
-//     svg.append('text')
-//         .attr("class", "hidden-message")
-//         .attr("x", 30)
-//         .attr("y", $("h1").offset().top * 0.3)
-//         .attr("font-size", "20px")
-//         .attr("fill", "navy")
-//         .text(hiddenMessage[myKey]);
-
-//     // remove 'svg' element with the class of "temp-svg"
-//     d3.select(".temp-svg")
-//         .transition()
-//         .duration(2000)
-//         .remove();
-
-// });
-
+    });
