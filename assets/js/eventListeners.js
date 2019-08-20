@@ -21,7 +21,7 @@ const prcDescrObj = {
         "descr": `Data from anti-tumor drug study in mouse were analyzed. Analytical results were demostrated 
             with Matplotlib Python library.`},
     "soccer-betting": {
-        "img": "./assets/images/prj-img/soccer-betting.png",
+        "img": "./assets/images/prj-img/soccer-betting.gif",
         "descr": `Historical odds movements data of season 2018/19 for six soccer leagues from a total of 4 betting 
             companies were scraped and analyzed. Four types of machine learning models were built up accordingly 
             with the optimized ones selected to predict soccer match results.`},
@@ -33,7 +33,37 @@ const prcDescrObj = {
     "data-journalism": {
         "img": "./assets/images/prj-img/data-journalism.gif",
         "descr": `Dynamic graphic were made using health risk data from 2014 ACS 1-year estimate. Tooltips were 
-            incorporated as well using d3-tip.js.`},            
+            incorporated as well using d3-tip.js.`},
+    "aliens": {
+        "img": "./assets/images/prj-img/aliens.gif",
+        "descr": `A dashboard website was built, allowing customers to create/delete filters to query for the
+            eye-witness records of extra-terrestrial (ET).`},   
+    "biodiversity": {
+        "img": "./assets/images/prj-img/biodiversity.png",
+        "descr": `The interactive dashboard for the abundances of different microbial species in human belly 
+            buttons was deployed using Plotly.js.`}, 
+    "citi-bike": {
+        "img": "./assets/images/prj-img/citi-bike.gif",
+        "descr": `Data for the New York Citi Bike Program between 2017/06 and 2019/05 were analyzed and visualized 
+            using Tableau Public.`},
+    "hawaii": {
+        "img": "./assets/images/prj-img/hawaii.png",
+        "descr": `Sqlite database was queried for exploratory analysis of Hawaii climate. Flask API server was developed
+            upon the aforementioned database.`},   
+    "nat-disas": {
+        "img": "./assets/images/prj-img/nat-disas.gif",
+        "descr": `Natural disasters specifically in the forms of earthquakes, volcanoes, and tsunamis from 1900 till now
+            were examined and illustrated on the map with trends analyzed along time.`},    
+    "animals": {
+        "img": "./assets/images/prj-img/animals.gif",
+        "descr": `Facts about 69 endangered animals, articles with their names in New York Times, as well as the historical 
+            temperature of their habitat countries were scraped to be stored in MongoDB. HTML dashboard page was set up for 
+            data inquiry through communicating with Flask.`},       
+    "amzn-rev": {
+        "img": "./assets/images/prj-img/amzn-rev.png",
+        "descr": `Reviews on toys and sports sold on Amazon.com were loaded from Amazon s3 to ZEPL notebooks for ETL process. 
+            DataFrames were uploaded to Amazon Relational Database Service (RDS) instance and analyzed by both PySpark and 
+            MySQL.`}                                                                                 
 };
 // TO BE CONTINUED
 
@@ -182,7 +212,7 @@ d3.selectAll(".prj-lists-text")
 
         // Append "img" to html body
         d3.select("body").append("img")
-            .attr("class", "prj-img")
+            .attr("class", "prj-img p-1")
             .attr("src", `${prcDescrObj[this.id]["img"]}`)
             .attr("alt", `${this.id}`)
             .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
@@ -192,7 +222,7 @@ d3.selectAll(".prj-lists-text")
         // Make sure "img" with the class of "prj-img" has been completely loaded before "div" appending
         setTimeout(() => {
             d3.select("body").append("div")
-                .attr("class", "prj-descr")
+                .attr("class", "prj-descr p-1")
                 .attr("alt", `${this.id}`)
                 .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
                 .style("left", prjOffsetLeft)
