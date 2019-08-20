@@ -146,7 +146,7 @@ h1 {
     right: 40%;
     will-change: background-position;
     animation-name: boat-fishing;
-    animation-delay: 3s;
+    animation-delay: 1.5s;
     animation-duration: 400s;
 }
 

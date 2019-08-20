@@ -18,7 +18,22 @@ and team-work skills showcased by more than 10 co-authored SCI publications.`;
 const prcDescrObj = {
     "pymaceuticals": {
         "img": "./assets/images/prj-img/pymaceuticals.png",
-        "text": `Analyzed animal drug test and demostrated the results with Matplotlib Python library`}
+        "descr": `Data from anti-tumor drug study in mouse were analyzed. Analytical results were demostrated 
+            with Matplotlib Python library.`},
+    "soccer-betting": {
+        "img": "./assets/images/prj-img/soccer-betting.png",
+        "descr": `Historical odds movements data of season 2018/19 for six soccer leagues from a total of 4 betting 
+            companies were scraped and analyzed. Four types of machine learning models were built up accordingly 
+            with the optimized ones selected to predict soccer match results.`},
+    "weatherPy": {
+        "img": "./assets/images/prj-img/weatherPy.png",
+        "descr": `Weather of random 500+ cities across the world were requested through OpenWeatherMap API. Relationships
+            between latitude and 1. temperature; 2. relative humidity; 3. cloudiness; and 4. wind speed were analyzed.
+            A viz. dashboard website was created accordingly.`},
+    "data-journalism": {
+        "img": "./assets/images/prj-img/data-journalism.gif",
+        "descr": `Dynamic graphic were made using health risk data from 2014 ACS 1-year estimate. Tooltips were 
+            incorporated as well using d3-tip.js.`},            
 };
 // TO BE CONTINUED
 
@@ -143,20 +158,20 @@ d3.selectAll(".prj-lists-text")
         
         if ($(window).width() >= 750) {
 
-            prjOffsetLeft = `${$(".prj-lists-text").offset().left - 594.07 + 0.1833 * $(window).width()}px`;
-            prjOffsetTop = `${$(".prj-lists-text").offset().top}px`;
+            prjOffsetLeft = `${$(this).offset().left - 594.07 + 0.1833 * $(window).width()}px`;
+            prjOffsetTop = `${$(this).offset().top}px`;
             // Downloaded from https://pixabay.com/vectors/point-pointing-finger-hand-38123/; edited by Photoshop
             cursorPath = "./assets/images/cursors/cursor-left.png";            
 
         } else {
 
             if ($(window).width() > 559) {
-                prjOffsetLeft = `${$(".prj-lists-text").offset().left - 150}px`;
+                prjOffsetLeft = `${$(this).offset().left - 150}px`;
             } else {
-                prjOffsetLeft = `${$(".prj-lists-text").offset().left}px`;
+                prjOffsetLeft = `${$(this).offset().left}px`;
             }            
             
-            prjOffsetTop = `${$(".prj-lists-text").offset().top + 20}px`;
+            prjOffsetTop = `${$(this).offset().top + 20}px`;
             // Downloaded from https://www.sccpre.cat/show/bTmhxT_hand-pointing-down-finger-pointing-down-vector/; edited by Photoshop
             cursorPath = "./assets/images/cursors/cursor-down.png";
         }
@@ -182,7 +197,7 @@ d3.selectAll(".prj-lists-text")
                 .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
                 .style("left", prjOffsetLeft)
                 .style("top", `${$(".prj-img").offset().top + $(".prj-img").outerHeight()}px`)
-                .text(`${prcDescrObj[this.id]["text"]}`);            
+                .text(`${prcDescrObj[this.id]["descr"]}`);            
         }, 8);
 
     })
