@@ -228,8 +228,8 @@ d3.selectAll(".prj-lists-text")
                 .style("left", prjOffsetLeft)
                 .style("top", `${$(".prj-img").offset().top + $(".prj-img").outerHeight()}px`)
                 .text(`${prcDescrObj[this.id]["descr"]}`);            
-        }, 8);
-
+        }, 6);
+        
     })
 
     // Remove demo image and description after mouse has been moved away from project
