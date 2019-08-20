@@ -65,9 +65,6 @@ const prcDescrObj = {
             DataFrames were uploaded to Amazon Relational Database Service (RDS) instance and analyzed by both PySpark and 
             MySQL.`}                                                                                 
 };
-// TO BE CONTINUED
-
-
 
 // Set the viz of boat after animation starts
 d3.select("#fishing-end")
@@ -132,33 +129,57 @@ d3.select("#fishing-end").on("click", () => {
         .transition()
         .duration(2000)
         .remove();
-
-    // Make myname "blink" thrice shortly after the hidden message disappears
+    
+    // Animation for myname to attract attention for hovering after the hidden message disappears
     setTimeout(() => {
-
-        d3.select("#myname").attr("style", "color:dodgerblue");
+        d3.select("#myname-L").attr("style", "color:dodgerblue");
+        d3.select(".fa-user-secret").attr("style", "color:dodgerblue");
         setTimeout(() => {
-            d3.select("#myname").attr("style", "color:white");
+            d3.select("#myname-L").attr("style", "color:white");
             setTimeout(() => {
-                d3.select("#myname").attr("style", "color:dodgerblue");
+                d3.select("#myname-E").attr("style", "color:dodgerblue");
                 setTimeout(() => {
-                    d3.select("#myname").attr("style", "color:white");
+                    d3.select("#myname-E").attr("style", "color:white");
                     setTimeout(() => {
-                        d3.select("#myname").attr("style", "color:dodgerblue");
+                        d3.select("#myname-I").attr("style", "color:dodgerblue");
                         setTimeout(() => {
-                            d3.select("#myname").attr("style", "color:white");
-                        }, 200);
-                    }, 200);
-                }, 200);
-            }, 200);            
-        }, 200);
-
+                            d3.select("#myname-I").attr("style", "color:white");
+                            setTimeout(() => {
+                                d3.select("#myname-K").attr("style", "color:dodgerblue");
+                                setTimeout(() => {
+                                    d3.select("#myname-K").attr("style", "color:white");
+                                    setTimeout(() => {
+                                        d3.select("#myname-A").attr("style", "color:dodgerblue");
+                                        setTimeout(() => {
+                                            d3.select("#myname-A").attr("style", "color:white");
+                                            setTimeout(() => {
+                                                d3.select("#myname-N").attr("style", "color:dodgerblue");
+                                                setTimeout(() => {
+                                                    d3.select("#myname-N").attr("style", "color:white");
+                                                    setTimeout(() => {
+                                                        d3.select("#myname-G").attr("style", "color:dodgerblue");
+                                                        setTimeout(() => {
+                                                            d3.select("#myname-G").attr("style", "color:white");
+                                                            d3.select(".fa-user-secret").attr("style", "color:silver");
+                                                        }, 40);
+                                                    }, 40);
+                                                }, 40);
+                                            }, 40);                                
+                                        }, 40);
+                                    }, 40);
+                                }, 40);
+                            }, 40);                
+                        }, 80);
+                    }, 40);
+                }, 40);
+            }, 40);            
+        }, 40);
     }, 2200);
 
 });
 
 // Use jQuery to append "About Me" when hovering on my name 
-$("#myname").hover(function() {
+$(".navbar-brand").hover(function() {
 
     $(this).css("color", "dodgerblue").append(`<div class='about-me'><span>${aboutMe}</span></div>`);
     }, function() {
