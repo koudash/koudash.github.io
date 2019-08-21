@@ -232,7 +232,8 @@ d3.selectAll(".prj-lists-text")
             .style("cursor", `url(${cursorPath}), auto`);
 
         // Append "img" to html body
-        d3.select("body").append("img")
+        d3.select("body")
+            .append("img")
             .attr("class", "prj-img p-1")
             .attr("src", `${prcDescrObj[this.id]["img"]}`)
             .attr("alt", `${this.id}`)
@@ -242,14 +243,15 @@ d3.selectAll(".prj-lists-text")
         // Append "div" (description text) to html body
         // Make sure "img" with the class of "prj-img" has been completely loaded before "div" appending
         setTimeout(() => {
-            d3.select("body").append("div")
+            d3.select("body")
+                .append("div")
                 .attr("class", "prj-descr p-1")
                 .attr("alt", `${this.id}`)
                 .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
                 .style("left", prjOffsetLeft)
                 .style("top", `${$(".prj-img").offset().top + $(".prj-img").outerHeight()}px`)
                 .text(`${prcDescrObj[this.id]["descr"]}`);            
-        }, 6);
+        }, 8);
         
     })
 
