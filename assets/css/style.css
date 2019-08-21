@@ -195,11 +195,6 @@ h1 {
 #myname {
     color: white;
 }
-/* 
-.fa-icon-lg {
-    font-size: 36px;
-    color: silver;
-} */
 
 .fa-icon-lg {
     font-size: 24px;
@@ -301,29 +296,23 @@ h1 {
     }
 }
 
-.prj-img {
+.prj-div {
     position: absolute;
     background-color: white;
     height: auto;
-    z-index: 50;
-    border-width: 2px 2px 0 2px;
+    border-width: 2px;
     border-style: solid;
     border-color: black;
-    border-radius: 35px 10px 0 0;
-}
-
-.prj-descr {
-    position: absolute;
-    background-color: white;
-    height: auto;
+    border-radius: 10px;
     z-index: 50;
-    border-width: 0 2px 2px 2px;
-    border-style: solid;
-    border-color: black;  
-    border-radius: 0 0 35px 10px;      
 }
 
-/* Set the z-index of ".dropdown-menu" smaller than that of ".prj-img" and ".prj-descr */
+.prj-img
+.prj-descr {
+    border-radius: 10px;
+}
+
+/* Set the z-index of ".dropdown-menu" smaller than that of ".prj-div" */
 .dropdown-menu {
     z-index: 40;
 }

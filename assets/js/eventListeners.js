@@ -63,9 +63,10 @@ const prcDescrObj = {
         "img": "./assets/images/prj-img/amzn-rev.png",
         "descr": `Reviews on toys and sports sold on Amazon.com were loaded from Amazon s3 to ZEPL notebooks for ETL process. 
             DataFrames were uploaded to Amazon Relational Database Service (RDS) instance and analyzed by both PySpark and 
-            MySQL.`}                                                                                 
+            MySQL.`}
 };
 
+// <----- ||||| ANIMATION FOR FISHING BOAT MOVEMENT ||||| -----> //
 // Set the viz of boat after animation starts
 d3.select("#fishing-end")
 
@@ -77,8 +78,8 @@ d3.select("#fishing-end")
         d3.select(this)
             .attr("class", "visible");
 
-        let svg = d3.select("body")
-            .append("svg")
+        let svg = d3.select('body')
+            .append('svg')
             .attr("class", "temp-svg"); 
             
         svg.append('text')
@@ -89,7 +90,7 @@ d3.select("#fishing-end")
             .attr("fill", "hotpink")
             .text("Click on Me for Hidden Message!");            
 
-        // remove 'svg' element with the class of "temp-svg"
+        // remove 'svg' element with the class of "temp-svg" after 1.5s
         d3.select(".temp-svg")
             .transition()
             .duration(1500)
@@ -106,11 +107,12 @@ d3.select("#fishing-end")
         
     });
 
+// <----- ||||| EVENT LISTENER FOR CLICKING ON FISHING BOAT ||||| -----> //
 // Show hidden messages upon mouse clicking on the boat
 d3.select("#fishing-end").on("click", () => {
 
-    let svg = d3.select("body")
-        .append("svg")
+    let svg = d3.select('body')
+        .append('svg')
         .attr("class", "temp-svg");  
 
     // Randomly generate a number between 0 and 4 (inclusive), functioning as the key to call for message in "hiddenMessage" 
@@ -178,6 +180,7 @@ d3.select("#fishing-end").on("click", () => {
 
 });
 
+// <----- ||||| EVENT LISTENER FOR HOVERING ON MY NAME ||||| -----> //
 // Use jQuery to append "About Me" when hovering on my name 
 $(".navbar-brand").hover(function() {
 
@@ -188,7 +191,8 @@ $(".navbar-brand").hover(function() {
 
 });
 
-// Change the color of techs from black to gray when hovered on
+// <----- ||||| EVENT LISTENER FOR HOVERING ON DROPDOWN TEXT ||||| -----> //
+// Change the color of "dropdown-toggle" from black to gray when hovered on
 $(".nav-link").hover(function() {
 
     $(this).css("color", "gray");
@@ -197,6 +201,7 @@ $(".nav-link").hover(function() {
 
 });
 
+// <----- ||||| EVENT LISTENER FOR HOVERING ON PROJECT NAME ||||| -----> //
 // Demo image and description of selected project
 d3.selectAll(".prj-lists-text")  
     
@@ -231,34 +236,33 @@ d3.selectAll(".prj-lists-text")
         d3.select(this)
             .style("cursor", `url(${cursorPath}), auto`);
 
-        // Append "img" to html body
-        d3.select("body")
-            .append("img")
-            .attr("class", "prj-img p-1")
-            .attr("src", `${prcDescrObj[this.id]["img"]}`)
-            .attr("alt", `${this.id}`)
+        // Append 'div' to "body" for info about hovered project
+        let prjDiv = d3.select('body')
+            .append('div')
+            .attr("class", "prj-div p-0")
             .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
             .style("left", prjOffsetLeft)
             .style("top", prjOffsetTop);
-        // Append "div" (description text) to html body
-        // Make sure "img" with the class of "prj-img" has been completely loaded before "div" appending
-        setTimeout(() => {
-            d3.select("body")
-                .append("div")
-                .attr("class", "prj-descr p-1")
-                .attr("alt", `${this.id}`)
-                .style("width", `${72.205 - 0.0422 * $(window).width()}vw`)
-                .style("left", prjOffsetLeft)
-                .style("top", `${$(".prj-img").offset().top + $(".prj-img").outerHeight()}px`)
-                .text(`${prcDescrObj[this.id]["descr"]}`);            
-        }, 8);
+
+        // Append "img" to 'div' with class of "prj-div"
+        prjDiv
+            .append('img')
+            .attr("id", "prj-img")
+            .attr("class", "prj-img p-1")
+            .attr("src", `${prcDescrObj[this.id]["img"]}`)
+            .attr("alt", `${this.id}`)
+            .style("width", "100%");
+
+        // Append "div" (description text) to 'div' with class of "prj-div"
+        prjDiv
+            .append('div')
+            .attr("class", "prj-descr p-1")
+            .attr("alt", `${this.id}`)
+            .text(`${prcDescrObj[this.id]["descr"]}`);
         
     })
 
     // Remove demo image and description after mouse has been moved away from project
     .on("mouseout", function() {
-
-        d3.select(".prj-img").remove();
-        d3.select(".prj-descr").remove();
-
+        d3.select(".prj-div").remove();
     });
