@@ -20,6 +20,10 @@ const prcDescrObj = {
         "img": "./assets/images/prj-img/pymaceuticals.png",
         "descr": `Data from anti-tumor drug study in mouse were analyzed. Analytical results were demostrated 
             with Matplotlib Python library.`},
+    "qPCR": {
+        "img": "./assets/images/prj-img/qpcr.gif",
+        "descr": `The qPCR results data in ".csv" format were read in, analyzed using 2^(-Delta Delta CT) method, 
+        and plotted by Matplotlib. Optional info. can be specified to generate personalized bar graph.`},                    
     "soccer-betting": {
         "img": "./assets/images/prj-img/soccer-betting.gif",
         "descr": `Historical odds movements data of season 2018/19 for six soccer leagues from a total of 4 betting 
